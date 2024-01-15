@@ -1,18 +1,30 @@
 import java.util.Scanner;
 
-public class App {static Scanner keyb = new Scanner(System.in);
-
+public class App {
+    static Scanner keyb = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
 
-        System.out.println("\n"+"*****Entrer un nombre :");
-        double getNombre1 = keyb.nextDouble();
-        System.out.println("\n"+"*****Entrer un nombre :");
-        double getNombre2 = keyb.nextDouble();
-        
-        Version1 calcul = new Version1(getNombre1, getNombre2);
+        System.out.println("\n");
+        System.out.println("                      ************************************");
+        System.out.println("                      *             BONJOUR !            *");
+        System.out.println("                      *                                  *");
+        System.out.println("                      *     JE SUIS UNE CALCULATRICE     *");
+        System.out.println("                      *               JAVA               *");
+        System.out.println("                      *           _______________        *");
+        System.out.println("                      *                                  *");
+        System.out.println("                      ************************************");
+        System.out.println(" ");
+
+        System.out.print("\n" + "                      Entrer un nombre : ");
+        Calculatrice lire = new Calculatrice(0,0);
+        double getNombre1 = lire.lireNombre();
+        System.out.print("\n" + "                      Entrer un nombre : ");
+        double getNombre2 = lire.lireNombre();
+
+        Calculatrice calcul = new Calculatrice(getNombre1, getNombre2);
         double resultat = calcul.somme();
 
-        System.out.println("******Le Resultat est :" + resultat);
+        System.out.println("\n"+"                      Le Resultat est : " + resultat +"\n");
     }
 }
